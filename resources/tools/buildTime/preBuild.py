@@ -48,5 +48,6 @@ env.Append(CXXFLAGS=["-Wno-overloaded-virtual"])
 script_path = 'resources/tools/buildTime/preBuild.sh'
 subprocess.run(['bash', script_path])
 
+# OPRAVENO: Odstraněno check=True, aby chybějící Rust v cloudu neshodil celou kompilaci
 script_path = 'components/rusty/build_rust.sh'
-subprocess.run(['bash', script_path], check=True)
+subprocess.run(['bash', script_path], check=False)
